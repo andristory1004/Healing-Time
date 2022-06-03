@@ -33,12 +33,31 @@ class _DetailPageState extends State<DetailPage> {
       );
     }
 
+    Widget SubTitle(
+      String name,
+    ) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(name,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.arrow_forward),
+          )
+        ],
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         automaticallyImplyLeading: false,
         leading: BackButton(color: black),
+        title: Text("Pameungpeuk",
+            style: TextStyle(
+                color: black, fontSize: 18, fontWeight: FontWeight.w600)),
         actions: [
           IconButton(
             onPressed: () {},
@@ -106,18 +125,7 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Deskripsi",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w500)),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.arrow_forward),
-                      )
-                    ],
-                  ),
+                  SubTitle("Deskripsi"),
                   Text(
                     "Papandayan Resort and Leisure Park memiliki panorama yang indah karena berlokasi di kaki Gunung Papandayan. Pengunjung yang datang bisa berburu selfie, seperti di gardu pandang dan saung-saung dari kayu dan bambu",
                     maxLines: 3,
@@ -137,18 +145,31 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Rating & Ulasan",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w500)),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.arrow_forward),
-                      )
-                    ],
-                  ),
+                  SubTitle("Harga Tiket"),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SubTitle("Lokasi"),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SubTitle("Ratting & Ulasan"),
                   Row(
                     children: [
                       Column(
@@ -188,9 +209,8 @@ class _DetailPageState extends State<DetailPage> {
                           Text("8.366.454")
                         ],
                       ),
-                      
                     ],
-                  )
+                  ),
                 ],
               ),
             )

@@ -51,16 +51,6 @@ class ItemLokasi extends StatelessWidget {
         ),
         title: Text("Garut Selatan"),
         subtitle: Text("Pantai Santolo"),
-        // trailing: Row(
-        //   children: [
-        //     Icon(
-        //       Icons.star,
-        //       color: orage,
-        //     ),
-        //     Text("4.5",
-        //         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
-        //   ],
-        // )
       ),
     );
   }

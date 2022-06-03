@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:getwidget/components/carousel/gf_carousel.dart';
 import 'package:healing/Style/custom_color.dart';
 
 class ItemUntukAnda extends StatelessWidget {
@@ -101,6 +102,7 @@ class ItemUntukAnda extends StatelessWidget {
       );
     }
 
+    List<String> imageList = ['images/sample.png', 'images/sample2.png'];
     return Container(
       margin: EdgeInsets.only(top: 20),
       child: Column(
@@ -116,6 +118,35 @@ class ItemUntukAnda extends StatelessWidget {
                     Text("Wisata Alam indonesia",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w500)),
+                    GFCarousel(
+                      autoPlay: true,
+                      items: imageList.map((dataImage) {
+                        return Container(
+                            margin: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade200,
+                                      spreadRadius: 2,
+                                      blurRadius: 5,
+                                      offset: Offset(2, 5))
+                                ]),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5),
+                              child: Image(
+                                image: AssetImage(dataImage),
+                                fit: BoxFit.cover,
+                                width: 1000.0,
+                              ),
+                            ));
+                      }).toList(),
+                      onPageChanged: (index) {
+                        setState() {
+                          index;
+                        }
+                      },
+                    ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.only(

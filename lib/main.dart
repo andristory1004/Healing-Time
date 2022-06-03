@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healing/views/pages/detail_page.dart';
 import 'package:healing/views/pages/home_page/home_page.dart';
-import 'package:healing/views/pages/sign_up.dart';
+import 'package:healing/views/pages/users/sign_in.dart';
+import 'package:healing/views/pages/users/sign_up.dart';
 import 'package:healing/views/splash/splash_screen.dart';
 import 'package:healing/views/splash/welcome_page.dart';
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/WelcomePage', page: () => WelcomePage()),
         GetPage(name: '/HomePage', page: () => HomePage()),
+        GetPage(name: '/SignIn', page: () => SignIn()),
         GetPage(name: '/SignUp', page: () => SignUp()),
         GetPage(name: '/DetailPage', page: () => DetailPage())
       ],
